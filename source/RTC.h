@@ -1,3 +1,6 @@
+#ifndef _RTC_H
+#define _RTC_H
+
 #include <gba_base.h>
 
 #define UNBCD(x) (((x) & 0xF) + (((x) >> 4) * 10))
@@ -18,3 +21,5 @@ int rtc_read(void);
 int rtc_get(u8 *data);
 int rtc_gettime(u8 *data);
 void rtc_set(u8 *data);
+
+#endif // _RTC_H

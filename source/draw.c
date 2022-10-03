@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 #include <gba_base.h>
 #include <gba_dma.h>
 
@@ -12,7 +13,6 @@
 #include "ezkernel.h"
 
 
-int current_y = 1;
 extern u8 pReadCache [MAX_pReadCache_size]EWRAM_BSS;
 //******************************************************************************
 void IWRAM_CODE Clear(u16 x, u16 y, u16 w, u16 h, u16 c, u8 isDrawDirect)
@@ -194,6 +194,10 @@ void DrawHZText12(char *str, u16 len, u16 x, u16 y, u16 c, u8 isDrawDirect)
 	}
 }
 //---------------------------------------------------------------------------------
+#if 1
+void DEBUG_printf(const char *format, ...) { }
+#else
+#include <stdio.h>
 void DEBUG_printf(const char *format, ...)
 {
     char* str;
@@ -220,6 +224,7 @@ void DEBUG_printf(const char *format, ...)
     	current_y=1;
     }
 }
+#endif
 //---------------------------------------------------------------------------------
 void ShowbootProgress(char *str)
 {

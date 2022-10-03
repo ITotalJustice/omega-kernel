@@ -1,3 +1,6 @@
+#ifndef _NORFLASH_OP_H
+#define _NORFLASH_OP_H
+
 #include <gba_base.h>
 
 #include "ff.h"
@@ -10,3 +13,5 @@ void WriteFlash(u32 address,u8 *buffer,u32 size);
 void IWRAM_CODE WriteFlash_with32word(u32 address,u8 *buffer,u32 size);
 u32 Loadfile2NOR(TCHAR *filename, u32 NORaddress,u32 have_patch);
 u32 GetFileListFromNor(void);
+
+#endif // _NORFLASH_OP_H

@@ -1,3 +1,6 @@
+#ifndef _GBAPATCH_H
+#define _GBAPATCH_H
+
 #include <gba_base.h>
 
 #include "ff.h"
@@ -68,7 +71,10 @@ u8 Check_mde_file(TCHAR* gamefilename);
 void Make_mde_file(TCHAR* gamefilename,u8 Save_num);
 
 void Patch_SpecialROM_sleepmode(void);
+void Patch_SpecialROM_TrimSize(void);
 u32 use_internal_engine(u8 gamecode[]);
 u32 Check_cheat_file(TCHAR *gamefilename);
 void SetTrimSize(u8* buffer,u32 romsize,u32 iSize,u32 mode,BYTE saveMODE);
 u32 Find_spend_address_SpecialROM(u32* Data);
+
+#endif // _GBAPATCH_H

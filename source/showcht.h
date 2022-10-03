@@ -1,3 +1,6 @@
+#ifndef _SHOWCHT_H
+#define _SHOWCHT_H
+
 #include <gba_base.h>
 
 
@@ -16,13 +19,13 @@ typedef struct CHT_LINE{
 	u8 select ;
 } FM_CHT_LINE;
 
-typedef struct ST_entry_{	
-	u32  address;		
-	u32  VAL;	
+typedef struct ST_entry_{
+	u32  address;
+	u32  VAL;
 } ST_entry;
 
-//int Get_KEY_val(FIL* file,char*KEY_section,char*KEY_secval,char getbuff[]);
-int Show_all_KEY_val(FIL* file);
 u32 Check_cht_file(TCHAR *gamefilename);
 void Open_cht_file(TCHAR *gamefilename,u32 havecht);
 void Trim(char s[]);
+
+#endif // _SHOWCHT_H

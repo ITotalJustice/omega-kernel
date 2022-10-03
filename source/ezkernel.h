@@ -41,7 +41,7 @@
 
 
 typedef struct FM_NOR_FILE_SECT{////save to nor
-	unsigned char filename[100];	
+	unsigned char filename[100];
 	u16 rompage ;
 	u16 have_patch ;
 	u16	have_RTS;
@@ -52,12 +52,12 @@ typedef struct FM_NOR_FILE_SECT{////save to nor
 } FM_NOR_FS;
 
 typedef struct FM_Folder_SECT{
-	unsigned char filename[100];	
+	unsigned char filename[100];
 } FM_Folder_FS;
 
 typedef struct FM_FILE_SECT{
 	unsigned char filename[100];
-	u32 filesize;	
+	u32 filesize;
 } FM_FILE_FS;
 
 
@@ -98,10 +98,12 @@ extern u16 gl_color_NORFULL;
 extern u16 gl_color_btn_clean;
 
 u32 Setting_window(void);
+void Draw_select_icon(u32 X,u32 Y,u32 mode);
 
 
 u32 LoadRTSfile(TCHAR *filename);
 void ShowTime(u32 page_num ,u32 page_mode);
 
+void delay(u32 R0);
 
 //#endif

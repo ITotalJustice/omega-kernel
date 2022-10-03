@@ -23,3 +23,5 @@ void IWRAM_CODE Read_NOR_info();
 u16 IWRAM_CODE Read_SET_info(u32 offset);
 u32 Loadfile2PSRAM(TCHAR *filename);
 u16 IWRAM_CODE Read_FPGA_ver(void);
+
+void IWRAM_CODE Set_AUTO_save(u16  mode);
